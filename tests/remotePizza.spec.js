@@ -24,7 +24,7 @@ test('load ingredients asynchronously', async ({ page }) => {
 test('shows an error message', async ({ page }) => {
   await page.goto('/remote-pizza');
 
-  page.evaluate(() => {
+  await page.evaluate(() => {
     // Reference global instances set in src/browser.js
     const { worker, http, HttpResponse } = window.msw;
     worker.use(
