@@ -1,12 +1,12 @@
 {
   "name": "playwright-article-2024",
   "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "jest hello/",
-    "test:e2e": "npx playwright test --ui",
-    "test:e2e:ci": "npx playwright test"
+    "scripts": {
+    "test": "jest",
+    "test:ci": "jest hello/ --ci --coverage --maxWorkers=2",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "formik": "^2.4.5",
