@@ -46,7 +46,7 @@ jobs:
   e2e-tests:
     name: Playwright E2E Tests
     needs: unit-tests  # This creates the conditional dependency
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     
     steps:
       - name: Checkout code
