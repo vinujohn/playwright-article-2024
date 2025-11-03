@@ -40,9 +40,12 @@ jobs:
       run: npx playwright install --with-deps  # or 'all'
       if: success()
 
+    # - name: Run Playwright tests
+    #   if: success()  # Only runs if all previous steps succeeded
+    #   run: npx playwright test --project=firefox --trace on
+    #   env:
+    #     # Add any required Playwright environment variables here
+    #     PLAYWRIGHT_BASE_URL: ${{ vars.PLAYWRIGHT_BASE_URL || 'http://localhost:3000' }}
+
     - name: Run Playwright tests
-      if: success()  # Only runs if all previous steps succeeded
-      run: npx playwright test --project=firefox --trace on
-      env:
-        # Add any required Playwright environment variables here
-        PLAYWRIGHT_BASE_URL: ${{ vars.PLAYWRIGHT_BASE_URL || 'http://localhost:3000' }}
+      run: npx start-server-and-test 'PORT=3000 BROWSER=none CI=true npm start' http://localhost:3000 'npx playwright test --project=firefox --trace on'
