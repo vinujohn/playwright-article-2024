@@ -4,6 +4,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "jest hello/",
     "test:e2e": "npx playwright test --ui",
     "test:e2e:ci": "npx playwright test"
   },
