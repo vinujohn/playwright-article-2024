@@ -36,6 +36,9 @@ jobs:
     - name: Run Jest tests
       run: npm test -- --coverage
 
+    - name: Install Playwright browsers
+      run: npx playwright install chromium  # or 'all'
+      if: success()
 
     - name: Run Playwright tests
       if: success()  # Only runs if all previous steps succeeded
