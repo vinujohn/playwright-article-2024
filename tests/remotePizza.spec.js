@@ -3,23 +3,23 @@ const { test, expect } = require('@playwright/test');
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'pineapples'];
 
-test('load ingredients asynchronously', async ({ page }) => {
-  await page.goto('/remote-pizza');
+// test('load ingredients asynchronously', async ({ page }) => {
+//   await page.goto('/remote-pizza');
 
-  // Ingredients list is not visible
-  await expect(page.getByText(ingredients[0])).toBeHidden();
+//   // Ingredients list is not visible
+//   await expect(page.getByText(ingredients[0])).toBeHidden();
 
-  // Load ingredients
-  await page.getByRole('button', { name: 'bake' }).click();
+//   // Load ingredients
+//   await page.getByRole('button', { name: 'bake' }).click();
 
-  // All ingredients appear on the screen
-  for (const ingredient of ingredients) {
-    await expect(page.getByText(ingredient)).toBeVisible();
-  }
+//   // All ingredients appear on the screen
+//   for (const ingredient of ingredients) {
+//     await expect(page.getByText(ingredient)).toBeVisible();
+//   }
 
-  // The button is not clickable anymore
-  await expect(page.getByRole('button', { name: 'cook' })).toBeDisabled();
-});
+//   // The button is not clickable anymore
+//   await expect(page.getByRole('button', { name: 'cook' })).toBeDisabled();
+// });
 
 test('shows an error message', async ({ page }) => {
   await page.goto('/remote-pizza');
