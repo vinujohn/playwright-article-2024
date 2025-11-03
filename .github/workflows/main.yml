@@ -38,7 +38,7 @@ jobs:
       run: npm test -- --coverage
 
     - name: Install Playwright browsers
-      run: npx playwright install firefox --with-deps  # or 'all'
+      run: npx playwright install --with-deps  # or 'all'
       if: success()
 
     - name: Run Playwright tests
