@@ -1,7 +1,8 @@
 {
   "name": "playwright-article-2024",
   "private": true,
-    "scripts": {
+  "scripts": {
+    "build": "react-scripts build",
     "test": "jest",
     "test:ci": "jest hello/ --ci --coverage --maxWorkers=2",
     "test:e2e": "playwright test",
