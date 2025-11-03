@@ -37,12 +37,12 @@ jobs:
       run: npm test -- --coverage
 
     - name: Install Playwright browsers
-      run: npx playwright install chromium  # or 'all'
+      run: npx playwright install firefox  # or 'all'
       if: success()
 
     - name: Run Playwright tests
       if: success()  # Only runs if all previous steps succeeded
-      run: npx playwright test
+      run: npx playwright test --project=firefox
       env:
         # Add any required Playwright environment variables here
         PLAYWRIGHT_BASE_URL: ${{ vars.PLAYWRIGHT_BASE_URL || 'http://localhost' }}
