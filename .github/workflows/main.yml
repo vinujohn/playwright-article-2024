@@ -11,6 +11,7 @@ on:
 env:
   CI: true
   NODE_VERSION: 18
+  PORT: 3000
  
 jobs:
   test:
